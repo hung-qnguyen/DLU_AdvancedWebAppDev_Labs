@@ -3245,11 +3245,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Labs\\src\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj",
+      "projectUniqueName": "Z:\\DLU_AdvancedWebAppDev\\Labs\\src\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj",
       "projectName": "TatBlog.Data",
-      "projectPath": "Z:\\Labs\\src\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj",
+      "projectPath": "Z:\\DLU_AdvancedWebAppDev\\Labs\\src\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "Z:\\Labs\\src\\TipsAndTricks\\TatBlog.Data\\obj\\",
+      "outputPath": "Z:\\DLU_AdvancedWebAppDev\\Labs\\src\\TipsAndTricks\\TatBlog.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3266,8 +3266,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "Z:\\Labs\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
-              "projectPath": "Z:\\Labs\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
+            "Z:\\DLU_AdvancedWebAppDev\\Labs\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
+              "projectPath": "Z:\\DLU_AdvancedWebAppDev\\Labs\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
             }
           }
         }
