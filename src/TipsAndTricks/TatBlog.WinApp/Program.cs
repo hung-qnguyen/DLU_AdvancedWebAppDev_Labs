@@ -7,13 +7,13 @@ using TatBlog.WinApp;
 
 var context = new BlogDbContext();
 
-/*var seeder = new DataSeeder(context);
+var seeder = new DataSeeder(context);
 
 seeder.Initialize();
 
 var authors = context.Authors.ToList();
 
-Console.WriteLine("{0,-4}{1,-30}{2,-30}{3,12}",
+/*Console.WriteLine("{0,-4}{1,-30}{2,-30}{3,12}",
     "ID", "FullName", "Email", "Joined Date");
 
 foreach (var auth in authors)
@@ -22,7 +22,7 @@ foreach (var auth in authors)
         auth.Id, auth.FullName, auth.Email, auth.JoinedDate);
 }*/
 
-/*var posts = context.Posts
+var posts = context.Posts
     .Where(p => p.Published)
     .OrderBy(p => p.Title)
     .Select(p => new
@@ -35,7 +35,7 @@ foreach (var auth in authors)
         Category = p.Category.Name,
     }).ToList();
 
-foreach(var post in posts)
+foreach (var post in posts)
 {
     Console.WriteLine("Id       :{0}", post.Id);
     Console.WriteLine("Title    :{0}", post.Title);
@@ -44,7 +44,7 @@ foreach(var post in posts)
     Console.WriteLine("Author   :{0}", post.Author);
     Console.WriteLine("Category :{0}", post.Category);
     Console.WriteLine("".PadRight(80, '-'));
-}*/
+}
 
 IBlogRepository blogRepo = new BlogRepository(context);
 
@@ -62,7 +62,7 @@ foreach (var post in posts)
 }
 */
 
-var categories = await blogRepo.GetCategoriesAsync();
+/*var categories = await blogRepo.GetCategoriesAsync();
 
 Console.WriteLine("{0,-5}{1,-50}{2,10}",
 "ID", "Name", "Count");
@@ -72,7 +72,7 @@ foreach (var item in categories)
     Console.WriteLine("{0,-5}{1,-50}{2,10}",
     item.Id, item.Name, item.PostCount);
 
-}
+}*/
 
 /*var pagingParams = new PagingParams
 {

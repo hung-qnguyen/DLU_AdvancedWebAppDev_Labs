@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tXn2xwRt7bQBfRtvybEaqpS0vfaeaQQbMcC3TNiKwnolxgw0OpBOmeQcRy/+1yhvOVwz41Zfadwzo96PSMJxFg==",
+  "dgSpecHash": "hg87xrtStLFBgyeDOjbSbYY8lwzbPuEWHSFnhXZnUsGTUrBLjpi9BsDmSJl9WN2sYD/kaEXod19yeFjsRghjsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\repos\\AdvancedWebDev\\Lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
+  "projectFilePath": "Z:\\Labs\\src\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
