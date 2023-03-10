@@ -23,6 +23,7 @@ namespace TatBlog.Data.Contexts
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=TatBlog;
                 Trusted_Connection=True; MultipleActiveResultSets=true");
+            //optionsBuilder.UseNpgsql("Host=myToaster;Database=TatBlog;Username=user;Password=malte");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

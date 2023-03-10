@@ -31,7 +31,7 @@ namespace TatBlog.Data.Seeders
         {
             _dbContext.Database.EnsureCreated();
 
-            //if (_dbContext.Posts.Any()) return;
+            if (_dbContext.Posts.Any()) return;
 
             var authors = AddAuthors();
             var categories = AddCategories();
@@ -103,7 +103,7 @@ namespace TatBlog.Data.Seeders
                 }
             }
 
-            //_dbContext.Authors.AddRange(authors);
+            _dbContext.Authors.AddRange(authors);
             _dbContext.SaveChanges();
 
             return authors;
@@ -207,16 +207,16 @@ namespace TatBlog.Data.Seeders
             IList<Tag> tags)
         {
             var posts = new List<Post>();
-            for (int i = 0; i < postTitles.Length; i++)
+            foreach (string title in postTitles)
             {
                 posts.Add(
                     new()
                     {
-                        Title = postTitles[i],
-                        ShortDescription = postTitles[i],
-                        Description = postTitles[i],
+                        Title = title,
+                        ShortDescription = title,
+                        Description = title,
                         Meta = "",
-                        UrlSlug = formatToUrlSlug(postTitles[i]),
+                        UrlSlug = formatToUrlSlug(title),
                         Published = true,
                         PostedDate = new DateTime(random.Next(1990, 2024),
                             random.Next(1, 13),
@@ -238,7 +238,7 @@ namespace TatBlog.Data.Seeders
                             tags[random.Next(tagNames.Length)]
                         }
                     }
-                ) ;
+                );
             }
 
             _dbContext.AddRange(posts);
@@ -306,6 +306,142 @@ namespace TatBlog.Data.Seeders
                     Tags = new List<Tag>()
                     {
                         tags[2]
+                    }
+                },
+                new() {
+                    Title = "Title 4",
+                    ShortDescription = "ShortDesc 4",
+                    Description = "Desc 4",
+                    Meta = "Post 4",
+                    UrlSlug = "post-4",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 4, 3, 10, 20, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = random.Next(201),
+                    Author = authors[random.Next(5)],
+                    Category = categories[random.Next(10)],
+                    Tags = new List<Tag>()
+                    {
+                        tags[random.Next(20)]
+                    }
+                },
+                new() {
+                    Title = "Title 5",
+                    ShortDescription = "ShortDesc 5",
+                    Description = "Desc 5",
+                    Meta = "Post 5",
+                    UrlSlug = "post-5",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 4, 3, 10, 20, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = random.Next(201),
+                    Author = authors[random.Next(5)],
+                    Category = categories[random.Next(10)],
+                    Tags = new List<Tag>()
+                    {
+                        tags[random.Next(20)]
+                    }
+                },
+                new() {
+                    Title = "Title 6",
+                    ShortDescription = "ShortDesc 6",
+                    Description = "Desc 6",
+                    Meta = "Post 6",
+                    UrlSlug = "post-6",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 4, 3, 10, 20, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = random.Next(201),
+                    Author = authors[random.Next(5)],
+                    Category = categories[random.Next(10)],
+                    Tags = new List<Tag>()
+                    {
+                        tags[random.Next(20)]
+                    }
+                },
+                new() {
+                    Title = "Title 7",
+                    ShortDescription = "ShortDesc 7",
+                    Description = "Desc 8",
+                    Meta = "Post 7",
+                    UrlSlug = "post-7",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 4, 3, 10, 20, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = random.Next(201),
+                    Author = authors[random.Next(5)],
+                    Category = categories[random.Next(10)],
+                    Tags = new List<Tag>()
+                    {
+                        tags[random.Next(20)]
+                    }
+                },
+                new() {
+                    Title = "Title 8",
+                    ShortDescription = "ShortDesc 8",
+                    Description = "Desc 8",
+                    Meta = "Post 8",
+                    UrlSlug = "post-8",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 4, 3, 10, 20, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = random.Next(201),
+                    Author = authors[random.Next(5)],
+                    Category = categories[random.Next(10)],
+                    Tags = new List<Tag>()
+                    {
+                        tags[random.Next(20)]
+                    }
+                },
+                new() {
+                    Title = "Title 9",
+                    ShortDescription = "ShortDesc 9",
+                    Description = "Desc 9",
+                    Meta = "Post 9",
+                    UrlSlug = "post-9",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 4, 3, 10, 20, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = random.Next(201),
+                    Author = authors[random.Next(5)],
+                    Category = categories[random.Next(10)],
+                    Tags = new List<Tag>()
+                    {
+                        tags[random.Next(20)]
+                    }
+                },
+                new() {
+                    Title = "Title 10",
+                    ShortDescription = "ShortDesc 10",
+                    Description = "Desc 10",
+                    Meta = "Post 10",
+                    UrlSlug = "post-10",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 4, 3, 10, 20, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = random.Next(201),
+                    Author = authors[random.Next(5)],
+                    Category = categories[random.Next(10)],
+                    Tags = new List<Tag>()
+                    {
+                        tags[random.Next(20)]
+                    }
+                },
+                new() {
+                    Title = "Title 11",
+                    ShortDescription = "ShortDesc 11",
+                    Description = "Desc 11",
+                    Meta = "Post 11",
+                    UrlSlug = "post-11",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 4, 3, 10, 20, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = random.Next(201),
+                    Author = authors[random.Next(5)],
+                    Category = categories[random.Next(10)],
+                    Tags = new List<Tag>()
+                    {
+                        tags[random.Next(20)]
                     }
                 }
             };
