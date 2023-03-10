@@ -31,7 +31,7 @@ namespace TatBlog.Data.Seeders
         {
             _dbContext.Database.EnsureCreated();
 
-            if (_dbContext.Posts.Any()) return;
+            //if (_dbContext.Posts.Any()) return;
 
             var authors = AddAuthors();
             var categories = AddCategories();
@@ -95,7 +95,15 @@ namespace TatBlog.Data.Seeders
 
             };
 
-            _dbContext.Authors.AddRange(authors);
+            foreach (var item in authors)
+            {
+                if (!_dbContext.Authors.Any(a => a.UrlSlug == item.UrlSlug))
+                {
+                    _dbContext.Authors.Add(item);
+                }
+            }
+
+            //_dbContext.Authors.AddRange(authors);
             _dbContext.SaveChanges();
 
             return authors;
@@ -193,13 +201,13 @@ namespace TatBlog.Data.Seeders
 
             return tags;
         }
-        private IList<Post> AddPosts(
+        /*private IList<Post> AddPosts(
             IList<Author> authors,
             IList<Category> categories,
             IList<Tag> tags)
         {
             var posts = new List<Post>();
-            for (int i = 0; i < tagNames.Length; i++)
+            for (int i = 0; i < postTitles.Length; i++)
             {
                 posts.Add(
                     new()
@@ -230,15 +238,83 @@ namespace TatBlog.Data.Seeders
                             tags[random.Next(tagNames.Length)]
                         }
                     }
-                );
+                ) ;
             }
 
             _dbContext.AddRange(posts);
             _dbContext.SaveChanges();
 
             return posts;
-        }
+        }*/
 
+        private IList<Post> AddPosts(
+            IList<Author> authors,
+            IList<Category> categories,
+            IList<Tag> tags)
+        {
+            var posts = new List<Post>()
+            {
+                new()
+                {
+                    Title = "ASP.NET Diagnostic Scenarios",
+                    ShortDescription = "",
+                    Description = "",
+                    Meta = "",
+                    UrlSlug ="",
+                    Published = true,
+                    PostedDate = new DateTime(2021, 9, 26, 10, 20, 0),
+                    ModifiedDate = new DateTime(2021, 9, 26, 10, 20, 0),
+                    ViewCount = 10,
+                    Author = authors[0],
+                    Category = categories[0],
+                    Tags = new List<Tag>()
+                    {
+                        tags[0]
+                    }
+                },
+                new()
+                {
+                    Title = "Productivity Shortcuts on Windows 10 & 11",
+                    ShortDescription = "",
+                    Description = "",
+                    Meta = "",
+                    UrlSlug ="",
+                    Published = false,
+                    PostedDate = new DateTime(2020, 7, 15, 8, 22, 0),
+                    ModifiedDate = new DateTime(2020, 12, 6, 11, 4, 0),
+                    ViewCount = 14,
+                    Author = authors[2],
+                    Category = categories[3],
+                    Tags = new List<Tag>()
+                    {
+                        tags[3]
+                    }
+                },
+                new()
+                {
+                    Title = "Array or Object JSON deserialization",
+                    ShortDescription = "",
+                    Description = "",
+                    Meta = "",
+                    UrlSlug ="",
+                    Published = true,
+                    PostedDate = new DateTime(2019, 7, 2, 21, 5, 0),
+                    ModifiedDate = new DateTime(2020, 6, 6, 10, 28, 0),
+                    ViewCount = 20,
+                    Author = authors[4],
+                    Category = categories[2],
+                    Tags = new List<Tag>()
+                    {
+                        tags[2]
+                    }
+                }
+            };
+
+            _dbContext.AddRange(posts);
+            _dbContext.SaveChanges();
+
+            return posts;
+        }
 
     }
 }

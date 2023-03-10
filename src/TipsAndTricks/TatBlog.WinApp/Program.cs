@@ -13,16 +13,16 @@ seeder.Initialize();
 
 var authors = context.Authors.ToList();
 
-/*Console.WriteLine("{0,-4}{1,-30}{2,-30}{3,12}",
+Console.WriteLine("{0,-4}{1,-30}{2,-30}{3,12}",
     "ID", "FullName", "Email", "Joined Date");
 
 foreach (var auth in authors)
 {
     Console.WriteLine("{0,-4}{1,-30}{2,-30}{3,12:MM/dd/yyyy}",
         auth.Id, auth.FullName, auth.Email, auth.JoinedDate);
-}*/
+}
 
-var posts = context.Posts
+/*var posts = context.Posts
     .Where(p => p.Published)
     .OrderBy(p => p.Title)
     .Select(p => new
@@ -44,7 +44,7 @@ foreach (var post in posts)
     Console.WriteLine("Author   :{0}", post.Author);
     Console.WriteLine("Category :{0}", post.Category);
     Console.WriteLine("".PadRight(80, '-'));
-}
+}*/
 
 IBlogRepository blogRepo = new BlogRepository(context);
 
