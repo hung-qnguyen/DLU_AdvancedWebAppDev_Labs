@@ -7,7 +7,7 @@ using TatBlog.WinApp;
 
 var context = new BlogDbContext();
 
-/*var seeder = new DataSeeder(context);
+var seeder = new DataSeeder(context);
 
 seeder.Initialize();
 
@@ -20,7 +20,7 @@ foreach (var auth in authors)
 {
     Console.WriteLine("{0,-4}{1,-30}{2,-30}{3,12:MM/dd/yyyy}",
         auth.Id, auth.FullName, auth.Email, auth.JoinedDate);
-}*/
+}
 
 /*var posts = context.Posts
     .Where(p => p.Published)
@@ -35,7 +35,7 @@ foreach (var auth in authors)
         Category = p.Category.Name,
     }).ToList();
 
-foreach(var post in posts)
+foreach (var post in posts)
 {
     Console.WriteLine("Id       :{0}", post.Id);
     Console.WriteLine("Title    :{0}", post.Title);
@@ -62,7 +62,7 @@ foreach (var post in posts)
 }
 */
 
-var categories = await blogRepo.GetCategoriesAsync();
+/*var categories = await blogRepo.GetCategoriesAsync();
 
 Console.WriteLine("{0,-5}{1,-50}{2,10}",
 "ID", "Name", "Count");
@@ -72,7 +72,7 @@ foreach (var item in categories)
     Console.WriteLine("{0,-5}{1,-50}{2,10}",
     item.Id, item.Name, item.PostCount);
 
-}
+}*/
 
 /*var pagingParams = new PagingParams
 {
